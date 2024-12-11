@@ -1,37 +1,4 @@
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# from sklearn.ensemble import IsolationForest
-
-# # Load the enhanced data with new features
-# file_path = r'C:\Users\Dylan\Documents\Syracuse\cis735-final\enhanced_can_data.csv'  # Make sure this file path is correct
-# can_data = pd.read_csv(file_path)
-
-# # Plot histograms for payload features
-# plt.figure(figsize=(10, 5))
-# plt.hist(can_data['payload_mean'], bins=30, alpha=0.7, label='Payload Mean')
-# plt.hist(can_data['payload_variance'], bins=30, alpha=0.7, label='Payload Variance')
-# plt.xlabel("Value")
-# plt.ylabel("Frequency")
-# plt.legend()
-# plt.title("Histogram of Payload Mean and Variance")
-# plt.show()
-
-# # Apply Isolation Forest for anomaly detection
-# features = can_data[['time_diff', 'payload_mean', 'payload_variance', 'payload_unique']]
-
-# # Train isolation forest
-# iso_forest = IsolationForest(contamination=0.1, random_state=42)
-# can_data['anomaly_score'] = iso_forest.fit_predict(features)
-
-# # Visualize anomalies in the dataset
-# anomalies = can_data[can_data['anomaly_score'] == -1]
-# plt.scatter(can_data.index, can_data['payload_mean'], label='Normal')
-# plt.scatter(anomalies.index, anomalies['payload_mean'], color='r', label='Anomaly')
-# plt.xlabel("Index")
-# plt.ylabel("Payload Mean")
-# plt.title("Anomaly Detection in Payload Mean")
-# plt.legend()
-# plt.show()
+# Description: This script is used to visualize the results of the anomaly detection model. It compares the anomaly rates
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.ensemble import IsolationForest
